@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    #navbar {
+        display: flex;
+        align-items: center;
+        top: 0px;
+    }
+
+    #navbar::before {
+        content: "";
+        background-color: black;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 15%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    #navbar ul {
+        margin: 10px;
+        display: flex;
+        /* font-family: 'Baloo Bhai', cursive; */
+    }
+
+    #navbar ul li {
+        /* display: block; */
+        align-items: center;
+        padding: 6px;
+        margin: 7px;
+        list-style: none;
+        font-family: 'Baloo Bhai', cursive;
+        font-size: 1.3rem;
+    }
+
+    #navbar ul li a {
+        color: white;
+        display: block;
+        padding: 3px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        /* font-family: 'Baloo Bhai', cursive; */
+        /* background-color: silver; */
+    }
+
+    #navbar ul li a:hover {
+        color: black;
+        background-color: silver;
+    }
+
+    #logo {
+        margin: 10px 5px;
+        top: 0%;
+    }
+
+    #logo img {
+        height: 94px;
+        margin: 2px 4px;
+    }
+
+    #home {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        height: 212px;
+        color: white;
+        padding: 4px 250px;
+        /* font-family: 'Baloo Bhai', cursive; */
+
+    }
+
+    #home::before {
+        content: "";
+        position: absolute;
+        background: url('bg.jpg') no-repeat center center/cover;
+        height: 375px;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.89;
+    }
+
+
+    .primary {
+        font-size: 2.5rem;
+        padding: 3px;
+        margin: 8px;
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #home p {
+        text-align: center;
+        font-size: 1.3rem;
+        padding: 2.5px;
+        margin: 2px;
+        font-family: 'Bree Serif', serif;
+    }
+
+    .btn {
+        font-size: 17px;
+        border: 2px solid black;
+        padding: 8px;
+        margin: 10px;
+        /* color: white; */
+        border-radius: 10px;
+        font-family: 'Bree Serif', serif;
+        background-color: #ab968e;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        color: #5a3636;
+        background-color: silver;
+
+    }
+
+    #services-container h1 {
+        /* justify-content: center;
+        align-items: center; */
+        text-align: center;
+        padding: 20px;
+        margin: 30px;
+        font-size: 2.3rem;
+    }
+
+    #services {
+        display: flex;
+    }
+
+    .box {
+        border-radius: 18px;
+        border: 3px solid black;
+        margin: -20px 13px;
+        padding: 15px;
+        text-align: center;
+        background-color: #e1dede;
+    }
+
+    .box img {
+        height: 55px;
+        width: 77px;
+        /* display: block; */
+    }
+
+    .box .h-secondary {
+        /* text-align: center; */
+        font-family: 'Bree Serif', serif;
+        font-size: 1.8rem;
+        margin-bottom: 9px;
+        padding: 2px;
+    }
+
+    #services .box p {
+        font-family: 'Bree Serif', serif;
+
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    #client-section {
+        /* background: url('bg2.jpg') no-repeat center center/cover; */
+        margin: 0%;
+    }
+
+    #client-section::before {
+        content: "";
+        position: absolute;
+        background: url('bg5.jpg') no-repeat center center/cover;
+        width: 100%;
+        height: 35%;
+        z-index: -1;
+        opacity: 0.2;
+    }
+
+    #clients {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin: 0px 10px;
+        margin-top: 20px;
+    }
+
+    .client-item {
+        margin: 8px;
+        padding: 5px;
+    }
+
+    .client-item img {
+        height: 110px;
+        width: 140px;
+    }
+
+    #client-section h1 {
+        font-size: 3rem;
+        padding: 3px;
+        margin: 8px;
+        margin-top: 25px;
+        text-align: center;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #contact {
+        margin-top: 3.2%;
+        position: relative;
+        /* display: flex;
+        flex-direction: column; */
+
+    }
+
+    #contact::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 103%;
+        z-index: -1;
+        opacity: 0.7;
+        background: url('bg6.jpg') no-repeat center center/cover;
+
+    }
+
+    #contact h1 {
+        text-align: center;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 7px;
+        font-size: 2.8rem;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #contact-box {
+        /* text-align: center; */
+        justify-content: center;
+        align-items: center;
+        margin: 2px;
+        padding: 2px;
+        display: flex;
+        /* padding-bottom: 98px; */
+    }
+
+    #contact-box input,
+    #contact-box textarea {
+        width: 100%;
+        padding: 2px;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #contact-box form {
+        width: 35%;
+
+    }
+
+    #contact-box label {
+        margin: 4px;
+        padding: 2px;
+        font-size: 1.1rem;
+        font-family: 'Bree Serif', serif;
+    }
+
+    #contact-box .form-group {
+        margin: 2px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        background: black;
+        color: white;
+        padding: 9px 20px;
+    }
+    
+</style>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
+                alt="MyOnlineMeal.com">
+        </div>
+        <ul>
+            <li id="item"><a href="#home">Home</a></li>
+            <li id="item"><a href="#services-container">Services</a></li>
+            <li id="item"><a href="#contact">Contact Now</a></li>
+            <li id="item"><a href="#about-section">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1 class="primary">Welcome to Online Meal</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum dolorum cupiditate reiciendis distinct
+            repellendus autem eaque.</p>
+        <p>Lorem ipsum, dolor sit ame adipisicing elit. Dolorum dicta soluta eveniet?</p>
+        <button class="btn">order now</button>
+    </section>
+
+    <section id="services-container">
+        <h1 class="h-primary center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="\landing page\pizza1.png" alt="">
+                <h2 class="h-secondary center">Food Catering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    sint delectus ab dolorum nam. Debitis facere, incidunt voluptates eos, mollitia voluptatem iste sunt
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+            <div class="box">
+                <img src="\landing page\burger2-removebg-preview.png" alt="">
+                <h2 class="h-secondary center">Bulk Ordering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde laudantium a incidunt animi ad, ab
+                    dignissimos vero? Unde numquam odit repudiandae perferendis nisi</p>
+            </div>
+            <div class="box">
+                <img src="\landing page\food_delivery-removebg-preview.png" alt="">
+                <h2 class="h-secondary center">Food Ordering</h2>
+                <p class="center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, culpa suscipit error
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus provident fugiat aliquam
+                    voluptas beatae facilis labore, omnis sint quae eum.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="client-section">
+        <h1 class="h-primary center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="apple-removebg-preview.png" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="microsoft-removebg-preview.png" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="apple-removebg-preview.png" alt="Our Client">
+            </div>
+
+            <div class="client-item">
+                <img src="skype.png" alt="Our Client">
+            </div>
+            <div class="client-item">
+                <img src="dell.png" alt="Our Client">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="h-primary center">Contact Us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="name" id="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number: </label>
+                    <input type="phone" name="name" id="phone" placeholder="Enter your phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message: </label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="center">
+            Copyright &copy; www.myOnlineMeal.com. All rights reserved!
+        </div>
+    </footer>
+
+</body>
+
+</html>
